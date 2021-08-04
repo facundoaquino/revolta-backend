@@ -27,7 +27,7 @@ const createUser = async (req = request, res = response) => {
 
 const login = async (req, res) => {
 	const { name, password } = req.body
-
+	// console.log(req.body)
 	try {
 		const user = await User.findOne({ name })
 		if (!user) {
