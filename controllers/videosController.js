@@ -33,7 +33,7 @@ const uploadVideo = async (req, res) => {
 }
 
 const getFolders = (req, res) => {
-	const folders = fs.readdirSync(__dirname + '/../uploads')
+	const folders = fs.readdirSync(__dirname + '/../../uploads')
 	// console.log(folders)
 	res.send({ folders })
 }
@@ -51,7 +51,7 @@ const getVideosName = async (req, res) => {
 
 const getVideo = (req, res) => {
 	const { folder, route } = req.params
-	const pathFile = path.join(__dirname, '/../uploads', folder, route)
+	const pathFile = path.join(__dirname, '/../../uploads', folder, route)
 	res.sendFile(pathFile)
 }
 

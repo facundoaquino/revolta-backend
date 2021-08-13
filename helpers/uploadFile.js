@@ -16,7 +16,7 @@ const uploadFile = (files, extValidated = ['mp3', 'mp4', 'mpeg', 'opus', 'ogg'],
 			return reject('Archivo no permitido')
 		}
 		const tempName = uuidv4() + '.' + ext
-		const uploadPath = path.join(__dirname, '../uploads/', folder, tempName)
+		const uploadPath = path.join(__dirname, '../../uploads/', folder, tempName)
 
 		// Use the mv() method to place the file somewhere on your server
 		archivo.mv(uploadPath, (err) => {
