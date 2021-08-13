@@ -1,6 +1,10 @@
 const Server = require('./models/server')
-require('dotenv').config()
+const path = require('path')
+
+require('dotenv').config({
+	path: path.resolve(__dirname, `${process.env.NODE_ENV}.env`),
+})
 
 const server = new Server()
-console.log(process.env.NODE_ENV)
+
 module.exports = server

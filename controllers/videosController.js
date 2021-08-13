@@ -5,14 +5,16 @@ const path = require('path')
 
 const uploadVideo = async (req, res) => {
 	const { folder } = req.params
-	const { description, name } = req.body
+	const { description, name, ritmo } = req.body
+	console.log(ritmo)
+	console.log(req.body)
 
 	try {
-		const fileName = await uploadFile(req.files, undefined, folder)
+		const fileName = await uploadFile(req.files, undefined, ritmo)
 		const video = new Video({
 			name,
 			description,
-			ritmo: folder,
+			ritmo,
 			path: fileName,
 		})
 		// console.log(fileName)

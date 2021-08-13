@@ -1,11 +1,7 @@
 const { v4: uuidv4 } = require('uuid')
 const path = require('path')
 
-const uploadFile = (
-	files,
-	extValidated = ['mp3', 'mp4', 'mpeg', 'opus'],
-	folder
-) => {
+const uploadFile = (files, extValidated = ['mp3', 'mp4', 'mpeg', 'opus', 'ogg'], folder) => {
 	return new Promise((resolve, reject) => {
 		// The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
 		const { archivo } = files
